@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suchetana — Academic Site Mockup</title>
+<style>
+  :root{
+    --ink:#101a33;
+    --muted:#4b5470;
+    --line:#e6e6e6;
+    --paper:#ffffff;
+    --accent:#16234a;
+    --accent-soft:#e2e6f0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Georgia","Iowan Old Style",serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+  }
+  .wrap{
+    max-width:820px;
+    margin:0 auto;
+    padding:64px 24px 96px;
+  }
+  /* Top section: photo left, bio right */
+  .hero{
+    display:flex;
+    gap:40px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .photo{
+    flex:0 0 200px;
+    width:200px;
+    height:200px;
+    border-radius:6px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#1c2a52,#0d1730);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#dfe3ee;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    text-align:center;
+  }
+  .photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .bio{
+    flex:1 1 340px;
+    min-width:260px;
+  }
+  .bio h1{
+    font-size:32px;
+    margin:0 0 6px;
+    font-weight:500;
+    letter-spacing:0.2px;
+  }
+  .bio .role{
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    letter-spacing:0.6px;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 16px;
+  }
+  .bio p{
+    margin:0 0 10px;
+    color:var(--muted);
+    font-size:16px;
+  }
+  .bio .links{
+    margin-top:14px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+  }
+  .bio .links a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    margin-right:16px;
+    padding-bottom:1px;
+  }
+  .bio .links a:hover{
+    border-bottom-color:var(--accent);
+    color:var(--accent);
+  }
+
+  /* CV button */
+  .cv-row{
+    margin:44px 0;
+    text-align:center;
+  }
+  .cv-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:Arial,sans-serif;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:0.3px;
+    color:#fff;
+    background:var(--accent);
+    padding:13px 30px;
+    border-radius:4px;
+    text-decoration:none;
+    transition:background 0.15s ease;
+  }
+  .cv-btn:hover{ background:#0c1530; }
+
+  hr.divider{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:8px 0 44px;
+  }
+
+  /* Research section */
+  .section-title{
+    font-size:13px;
+    font-family:Arial,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    color:var(--accent);
+    margin:0 0 24px;
+  }
+  .project{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .project:last-child{ border-bottom:none; }
+  .project h3{
+    margin:0 0 6px;
+    font-size:19px;
+    font-weight:600;
+  }
+  .project .meta{
+    font-family:Arial,sans-serif;
+    font-size:12.5px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+    margin:0 0 8px;
+  }
+  .project p{
+    margin:0;
+    color:var(--muted);
+    font-size:15.5px;
+  }
+  .project .tag{
+    display:inline-block;
+    font-family:Arial,sans-serif;
+    font-size:11.5px;
+    color:var(--accent);
+    background:var(--accent-soft);
+    padding:3px 9px;
+    border-radius:3px;
+    margin-top:10px;
+  }
+
+  .note{
+    margin-top:60px;
+    padding:16px 18px;
+    background:#fff;
+    border:1px dashed var(--line);
+    border-radius:6px;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .note strong{ color:var(--ink); }
+
+  @media (max-width:520px){
+    .hero{ flex-direction:column; text-align:center; }
+    .bio{ text-align:center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="photo"><img src="photo.jpeg" alt="Suchetana"></div>
+    <div class="bio">
+      <h1>Suchetana [Last Name]</h1>
+      <p class="role">Economics · Southern Methodist University</p>
+      <p>Hi, I'm Suchetana — a [PhD candidate / researcher] in the Economics Department at SMU. My work focuses on [your field, e.g. labor economics, applied microeconomics, econometrics]. I'm broadly interested in [one or two sentences on your research interests and what draws you to them].</p>
+      <div class="links">
+        <a href="mailto:suchetanad@smu.edu">Email</a>
+        <a href="#">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/suchetana-das/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cv-row">
+    <a class="cv-btn" href="cv.pdf" target="_blank" rel="noopener">
+      Download CV
+    </a>
+  </div>
+
+  <hr class="divider">
+
+  <div class="research">
+    <p class="section-title">Research</p>
+
+    <div class="project">
+      <div class="meta">Working Paper · 2026</div>
+      <h3>[Project Title One]</h3>
+      <p>One to two sentences describing the question, data, and main finding of this project — written so a non-specialist could follow it.</p>
+      <span class="tag">[e.g. Labor Economics]</span>
+    </div>
+
+    <div class="project">
+      <div class="meta">Work in Progress</div>
+      <h3>[Project Title Two]</h3>
+      <p>Short description of the second project: what you're studying, your approach, and current status (data collection, drafting, under review, etc.).</p>
+      <span class="tag">[e.g. Applied Microeconomics]</span>
+    </div>
+
+    <div class="project">
+      <div class="meta">Published / Under Review</div>
+      <h3>[Project Title Three]</h3>
+      <p>Description plus, if published, a link to the journal or a "read paper" link.</p>
+      <span class="tag">[e.g. Econometrics]</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
