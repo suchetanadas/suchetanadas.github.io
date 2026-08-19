@@ -14,6 +14,7 @@
     --accent-soft:#e2e6f0;
   }
   *{box-sizing:border-box;}
+  html{ scroll-behavior:smooth; }
   body{
     margin:0;
     font-family:"Georgia","Iowan Old Style",serif;
@@ -97,10 +98,14 @@
     color:var(--accent);
   }
 
-  /* CV button */
+  /* CV / nav buttons */
   .cv-row{
     margin:44px 0;
-    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
   }
   .cv-btn{
     display:inline-flex;
@@ -156,6 +161,9 @@
     margin:0;
     color:var(--muted);
     font-size:15.5px;
+    text-align:justify;
+    text-justify:inter-word;
+    hyphens:auto;
   }
   .project .tag{
     display:inline-block;
@@ -166,6 +174,49 @@
     padding:3px 9px;
     border-radius:3px;
     margin-top:10px;
+  }
+  .project .paper-link{
+    display:inline-block;
+    margin-top:10px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .project .paper-link:hover{
+    border-bottom-color:var(--accent);
+  }
+  .project .status-note{
+    display:block;
+    margin-top:10px;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    font-style:italic;
+    color:var(--muted);
+  }
+
+  /* Teaching section */
+  .teaching{
+    margin-top:8px;
+  }
+  .teaching-item{
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .teaching-item:last-child{ border-bottom:none; }
+  .teaching-item h3{
+    margin:0 0 4px;
+    font-size:17px;
+    font-weight:600;
+  }
+  .teaching-item .meta{
+    font-family:Arial,sans-serif;
+    font-size:12.5px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+    margin:0;
   }
 
   .note{
@@ -194,8 +245,8 @@
     <div class="bio">
       <h1>Suchetana Das </h1>
       <p class="role">Economics · Southern Methodist University</p>
-      <p> I am a Ph.D. candidate in Economics at Southern Methodist University. 
-        My research uses causal inference and applied econometric methods to examine how individual choices, institutions, and public policies shape labor-market, demographic, and health outcomes. 
+      <p> I am a Ph.D. candidate in Economics at Southern Methodist University.
+        My research uses causal inference and applied econometric methods to examine how individual choices, institutions, and public policies shape labor-market, demographic, and health outcomes.
        My primary research interests are labor and demographic economics, health economics, and applied econometrics. Outside of research, I enjoy hiking and exploring museums.
       </p>
       <div class="links">
@@ -206,28 +257,29 @@
   </div>
 
   <div class="cv-row">
-    <a class="cv-btn" href="cv.pdf" target="_blank" rel="noopener">
-      Download CV
-    </a>
+    <a class="cv-btn" href="cv.pdf" target="_blank" rel="noopener">CV</a>
+    <a class="cv-btn" href="#research">Research</a>
+    <a class="cv-btn" href="#teaching">Teaching</a>
   </div>
 
   <hr class="divider">
 
-  <div class="research">
+  <div class="research" id="research">
     <p class="section-title">Research</p>
 
     <div class="project">
       <div class="meta">Job Market Paper · 2026</div>
       <h3>Misplaced at Home? A Partial Observability Approach to Foster Care Placement Decisions</h3>
       <p>[Abstract]: When children are referred to Child Protective Services (CPS) caseworkers must decide
-whether to remove them from their homes or allow them to remain with their families. Although  
+whether to remove them from their homes or allow them to remain with their families. Although
 a large literature examines the consequences of foster care placement, much less is
 known about children who remain at home despite exhibiting characteristics similar to those
-of removed children. A central challenge is that both a child’s underlying removal risk and
+of removed children. A central challenge is that both a child's underlying removal risk and
 whether placement decisions align with that risk are unobserved. This paper develops a partial
 observability framework to predict unobserved removal risk and foster care placement decisions using
 a nationally representative longitudinal sample of children referred to CPS. Further, I examine how latent removal risk
 and placement status affect  subsequent educational outcomes.</p>
+      <a class="paper-link" href="misplacement.pdf" target="_blank" rel="noopener">Read draft →</a>
       <!-- <span class="tag">[e.g. Labor Economics]</span> -->
     </div>
 
@@ -235,14 +287,37 @@ and placement status affect  subsequent educational outcomes.</p>
       <div class="meta">Work in Progress</div>
       <h3>Unaccompanied Migrant Youth and Child Labor Violations: Accounting for Nonclassical Measurement Error</h3>
       <p>Short description of the second project: what you're studying, your approach, and current status (data collection, drafting, under review, etc.).</p>
+      <span class="status-note">Draft coming soon.</span>
       <!-- <span class="tag">[e.g. Applied Microeconomics]</span> -->
     </div>
 
     <div class="project">
-      <div class="meta">Published </div>
-      <h3>[Project Title Three]</h3>
-      <p> ... link.</p>
-      <span class="tag">[e.g. Econometrics]</span>
+      <div class="meta">Published</div>
+      <h3>Gendered Occupational Segregation and Its Cost in India</h3>
+      <p>With coauthors. [Add a one-line description of the paper's focus and main finding here.]</p>
+      <a class="paper-link" href="https://ideas.repec.org/h/spr/isbchp/978-981-99-4063-9_11.html" target="_blank" rel="noopener">Read paper →</a>
+      <!-- <span class="tag">[e.g. Econometrics]</span> -->
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="teaching" id="teaching">
+    <p class="section-title">Teaching</p>
+
+    <div class="teaching-item">
+      <h3>Teaching Assistant — Principles of Microeconomics</h3>
+      <p class="meta">Undergraduate</p>
+    </div>
+
+    <div class="teaching-item">
+      <h3>Teaching Assistant — Labor Economics</h3>
+      <p class="meta">Undergraduate</p>
+    </div>
+
+    <div class="teaching-item">
+      <h3>Teaching Assistant — Econometrics</h3>
+      <p class="meta">Graduate</p>
     </div>
   </div>
 
