@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suchetana Das</title>
+<style>
+  :root{
+    --ink:#101a33;
+    --muted:#4b5470;
+    --line:#e6e6e6;
+    --paper:#ffffff;
+    --accent:#16234a;
+    --accent-soft:#e2e6f0;
+  }
+  *{box-sizing:border-box;}
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family:"Georgia","Iowan Old Style",serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+  }
+  .wrap{
+    max-width:820px;
+    margin:0 auto;
+    padding:64px 24px 96px;
+  }
+  /* Top section: photo left, bio right */
+  .hero{
+    display:flex;
+    gap:40px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .photo{
+    flex:0 0 200px;
+    width:200px;
+    height:200px;
+    border-radius:6px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#1c2a52,#0d1730);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#dfe3ee;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    text-align:center;
+  }
+  .photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .bio{
+    flex:1 1 340px;
+    min-width:260px;
+  }
+  .bio h1{
+    font-size:32px;
+    margin:0 0 6px;
+    font-weight:500;
+    letter-spacing:0.2px;
+  }
+  .bio .role{
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    letter-spacing:0.6px;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 16px;
+  }
+  .bio p{
+    margin:0 0 10px;
+    color:var(--muted);
+    font-size:16px;
+    text-align:justify;
+    text-justify:inter-word;
+    hyphens:auto;
+  }
+  .bio .links{
+    margin-top:14px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+  }
+  .bio .links a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    margin-right:16px;
+    padding-bottom:1px;
+  }
+  .bio .links a:hover{
+    border-bottom-color:var(--accent);
+    color:var(--accent);
+  }
+
+  /* CV / nav buttons */
+  .cv-row{
+    margin:44px 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .cv-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:Arial,sans-serif;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:0.3px;
+    color:#fff;
+    background:var(--accent);
+    padding:13px 30px;
+    border-radius:4px;
+    text-decoration:none;
+    transition:background 0.15s ease;
+  }
+  .cv-btn:hover{ background:#0c1530; }
+
+  hr.divider{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:8px 0 44px;
+  }
+
+  /* Research section */
+  .section-title{
+    font-size:13px;
+    font-family:Arial,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    color:var(--accent);
+    margin:0 0 24px;
+  }
+  .project{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .project:last-child{ border-bottom:none; }
+  .project h3{
+    margin:0 0 6px;
+    font-size:19px;
+    font-weight:600;
+  }
+  .project .meta{
+    font-family:Arial,sans-serif;
+    font-size:12.5px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+    margin:0 0 8px;
+  }
+  .project p{
+    margin:0;
+    color:var(--muted);
+    font-size:15.5px;
+    text-align:justify;
+    text-justify:inter-word;
+    hyphens:auto;
+  }
+  .project .tag{
+    display:inline-block;
+    font-family:Arial,sans-serif;
+    font-size:11.5px;
+    color:var(--accent);
+    background:var(--accent-soft);
+    padding:3px 9px;
+    border-radius:3px;
+    margin-top:10px;
+  }
+  .paper-link{
+    display:inline-block;
+    margin-top:10px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .paper-link:hover{
+    border-bottom-color:var(--accent);
+  }
+  .project .status-note{
+    display:block;
+    margin-top:10px;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    font-style:italic;
+    color:var(--muted);
+  }
+
+  /* Teaching section */
+  .teaching{
+    margin-top:8px;
+  }
+  .teaching .role-label{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:0.6px;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 20px;
+  }
+  .teaching-item{
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .teaching-item h3{
+    margin:0 0 6px;
+    font-size:17px;
+    font-weight:600;
+  }
+  .teaching-item .course-list{
+    margin:0;
+    color:var(--muted);
+    font-size:15.5px;
+  }
+  .teaching-philosophy-row{
+    padding-top:16px;
+  }
+
+  .note{
+    margin-top:60px;
+    padding:16px 18px;
+    background:#fff;
+    border:1px dashed var(--line);
+    border-radius:6px;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    color:var(--muted);
+  }
+  .note strong{ color:var(--ink); }
+
+  @media (max-width:520px){
+    .hero{ flex-direction:column; text-align:center; }
+    .bio{ text-align:center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="photo"><img src="photo.jpeg" alt="Suchetana"></div>
+    <div class="bio">
+      <h1>Suchetana Das </h1>
+      <!-- <p class="role">Economics · Southern Methodist University</p> -->
+      <p> I am a Ph.D. candidate in Economics at Southern Methodist University.
+        My research uses causal inference and applied econometric methods to examine how individual choices, institutions, and public policies shape labor-market, demographic, and health outcomes.
+       My primary research interests are labor and demographic economics, health economics, and applied econometrics. Outside of research, I enjoy hiking and exploring museums.
+      </p>
+      <div class="links">
+        <a href="mailto:suchetanad@smu.edu">Email</a>
+        <a href="https://www.linkedin.com/in/suchetana-das/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cv-row">
+    <a class="cv-btn" href="cv.pdf" target="_blank" rel="noopener">CV</a>
+    <a class="cv-btn" href="#research">Research</a>
+    <a class="cv-btn" href="#teaching">Teaching</a>
+  </div>
+
+  <hr class="divider">
+
+  <div class="research" id="research">
+    <p class="section-title">Research</p>
+
+    <div class="project">
+      <div class="meta">Job Market Paper · 2026</div>
+      <h3>Misplaced at Home? A Partial Observability Approach to Foster Care Placement Decisions</h3>
+      <p>Abstract: When children are referred to Child Protective Services (CPS) caseworkers must decide
+whether to remove them from their homes or allow them to remain with their families. Although
+a large literature examines the consequences of foster care placement, much less is
+known about children who remain at home despite exhibiting characteristics similar to those
+of removed children. A central challenge is that both a child's underlying removal risk and
+whether placement decisions align with that risk are unobserved. This paper develops a partial
+observability framework to predict unobserved removal risk and foster care placement decisions using
+a nationally representative longitudinal sample of children referred to CPS. Further, I examine how latent removal risk
+and placement status affect  subsequent educational outcomes.</p>
+      <a class="paper-link" href="jmp.pdf" target="_blank" rel="noopener">Read latest draft →</a>
+      <!-- <span class="tag">[e.g. Labor Economics]</span> -->
+    </div>
+
+    <div class="project">
+      <div class="meta">Work in Progress</div>
+      <h3>Unaccompanied Migrant Youth and Child Labor Violations: Accounting for Nonclassical Measurement Error</h3>
+      <p>Abstract: The number of unaccompanied minors apprehended at the U.S. border has surged in recent years,
+        alongside a sharp rise in child labor violations under the Fair Labor Standards Act, many concentrated in industries like
+        meatpacking, agriculture, and food processing. This paper asks whether the release of unaccompanied migrant children to sponsors
+        contributes to rising child labor violations across U.S. counties. Combining Department of Labor investigation records from 2015 to 2023
+        with county level data on unaccompanied minors from the Office of Refugee Resettlement, I address a key measurement challenge: enforcement data likely capture only a fraction of true violations. Using a stochastic frontier framework that models the gap between detected and actual violations,
+        I recover more credible estimates of both the scale of child labor violations and their relationship to youth migration flows.</p>
+      <span class="status-note">Draft coming soon.</span>
+      <!-- <span class="tag">[e.g. Applied Microeconomics]</span> -->
+    </div>
+
+    <div class="project">
+      <div class="meta">Published</div>
+      <h3>Gendered Occupational Segregation and Its Cost in India</h3>
+      <p>With Mousumi Dutta, Riya Basu, Anuska Das, Utsav Biswas</p>
+      <a class="paper-link" href="https://ideas.repec.org/h/spr/isbchp/978-981-99-4063-9_11.html" target="_blank" rel="noopener">Read paper →</a>
+      <!-- <span class="tag">[e.g. Econometrics]</span> -->
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="teaching" id="teaching">
+    <p class="section-title">Teaching</p>
+    <p class="role-label">Teaching Assistant</p>
+
+    <div class="teaching-item">
+      <h3>Undergraduate Courses</h3>
+      <p class="course-list">Principles of Microeconomics, Intermediate Macroeconomics, Labor Economics, Economics of Human Rights, and International Economics</p>
+    </div>
+
+    <div class="teaching-item">
+      <h3>Graduate Courses</h3>
+      <p class="course-list">Advanced Econometrics</p>
+    </div>
+
+    <div class="teaching-philosophy-row">
+      <a class="paper-link" href="teaching-philosophy.pdf" target="_blank" rel="noopener">Teaching Philosophy →</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
